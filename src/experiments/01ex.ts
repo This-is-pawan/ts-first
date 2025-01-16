@@ -4,21 +4,32 @@ let text: String = "This is a code of typescript";
 text = "https://github.com/This-is-pawan";
 // let a=text.charAt(3);
 // let a=text.replace('/This-is-pawan','htknksdjjnk');
-type datas = {
-  products: String;
-  price: number;
-  quality: number;
-};
-const data: datas = {
-  products: "products is milk",
-  price: 23,
-  quality:1,
-};
+let app:any='this is  code of ts';
+app=673426563;
+ app=[{
+ name:'This is code ts ',
+ class:'12th',
+ rollno:234,
+ marks:324,
+ percentage:'80%',
+}]
+
+// type datas = {
+//   products: String;
+//   price: number;
+//   quality: number;
+// };
+// const data: datas = {
+//   products: "products is milk",
+//   price: 23,
+//   quality:1,
+// };
+
 const target = (ts:any): string => {
 
  return ts; 
 };
-let expt=target(data)
+let expt=target(app)
   export default  expt
 // console.log(data);
 
@@ -29,3 +40,11 @@ console.log(num1 + num2);
 let bol: boolean = num1 <= num2;
 let result = !bol;
 console.log(result);
+
+
+
+console.log(app);
+
+
+
+
