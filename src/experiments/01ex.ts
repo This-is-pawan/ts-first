@@ -49,6 +49,7 @@ console.log(app);
 // let cars:any[]=[...car]
 // let ex=cars.map((item)=>item   )
 // console.log(ex);
+// that  is way is not allow 
 
 let car: { brand: string; year: number; car: string }[] = [
   { brand: 'toyota', year: 2021, car: 'This is a car of japan' },
