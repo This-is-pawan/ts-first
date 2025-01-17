@@ -45,6 +45,23 @@ console.log(result);
 
 console.log(app);
 
+// let car:[{brand:string,year:number,car:string}]=[{brand:'toyota',year:2021,car:'This is a car of japan'},{company:'mahindra',experiences:30,country:'This is a car of india '}]
+// let cars:any[]=[...car]
+// let ex=cars.map((item)=>item   )
+// console.log(ex);
+
+let car: { brand: string; year: number; car: string }[] = [
+  { brand: 'toyota', year: 2021, car: 'This is a car of japan' },
+  { brand: 'mahindra', year: 2023, car: 'This is a car of india' },
+];
+
+let cars:any[] = [...car];
+let ex = cars.map((item) => item);
+console.log(ex);
+
+
+
+
 
 
 
