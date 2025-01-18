@@ -311,7 +311,7 @@ console.log(ServerResponseStatus);
 
 interface ServerResponse{
   result:ServerResponseStatus;
-  dat:string[];
+  date:string[];
 
 }
 
@@ -326,6 +326,62 @@ console.log(response);
 
 
 
+
+// #############
+interface ServerResponse{
+  result:ServerResponseStatus;
+  date:string[];
+
+}
+
+function getServerResponse():ServerResponse{
+  return {
+    result:ServerResponseStatus.Succees,
+    date:['first item','second item'],
+  };
+}
+const response:ServerResponse=getServerResponse();
+console.log(response);
+
+
+enum UserRole{
+  Admin,
+  Manager,
+  Employee,
+}
+type User ={
+  id:number;
+  name:string,
+  role:UserRole,
+  contact:[string,string];
+
+}
+function createUser(user:User):User{
+  return user
+}
+const user:User =createUser({
+  id:1,name:'john doe',
+  role:UserRole.Admin,
+  contact:['john@gmail.com','123-45-789']
+});
+
+
+console.log(user);
+
+let SomeValue:any='this is a string';
+let strlength:number=(SomeValue as string).length;
+
+type Bird={
+  name:string;
+
+}
+
+let birdString='{"name":"Eagle"}'
+let birdObject=JSON.parse(birdString);
+let bed=birdObject as Bird //type insertion
+
+console.log(bed);
+console.log(bed.name);
 
 
 
