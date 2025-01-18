@@ -109,6 +109,114 @@ console.log( Discount);
 
 
 
+// function sum(message:string,...numbers:number[]):string{
+// const doubled=numbers.map((num)=>num * 2)
+// console.log(doubled);
+
+// let total=numbers.reduce((p,c)=>{
+//  return p + c
+// },0)
+// return `${message}${total}`
+// }
+// let res=sum('The total is:',1,3,4,56,)
+// console.log(res);
+// #####
+// function processInput(input:string | number){
+// console.log(input *2 );// it get an error  this sense is can not use in it
+//  if (typeof input==='number') {
+//   console.log(input * 2 )
+//  }else{
+// console.log(input);
+
+//  }
+// }
+// processInput(10);
+// processInput('hello');
+
+// #####
+
+// function createEmployee({id}:{id:number}):{id:number;isActive:boolean}{
+// return {id,isActive:id % 2===0};
+// }
+// const first=createEmployee({id:1})
+// const second=createEmployee({id:2})
+// console.log(first,second);
+// alternative #########
+// function createStudent(student:{id:number,name:string,email:string}):void{
+// console.log(`${student.id}) welcome to the course ${student.name.toUpperCase()}!!!!and ${student.email.toLowerCase()}`);
+
+// }
+// const newStudent={
+//  id:1,
+//  name:'anna',
+//  email:'anna@gmail.com'
+// }
+
+// createStudent(newStudent)
+// createStudent({id:2,name:'bob',email:'bea@gmail.com'})
+// function process(
+//   input: string | number,
+//   config: { reverse: boolean } = { reverse: false }
+// ): string | number {
+//   if (typeof input === "number") {
+//     return input * input;
+//   } else {
+//     return config.reverse
+//       ? input.toUpperCase().split("").reverse().join("")
+//       : input.toUpperCase();
+//   }
+// }
+// console.log(process(10));
+// console.log(process("hee"));
+// console.log(process("helo there", { reverse: true }));
+
+// #####################
+// type User = {
+//   id: number;
+//   name: string;
+//   isActive: boolean;
+// };
+// const john: { id: number; name: string; isActive: boolean } = {
+//   id: 1,
+//   name: "john",
+//   isActive: true,
+// };
+// const susan: { id: number; name: string; isActive: susan } = {
+//   id: 1,
+//   name: "john",
+//   isActive: false,
+// };
+// console.log(john);
+// function createUser(user: User):
+// in this place use User type following{
+//   id: number;
+//   name: string;
+//   isActive: boolean;
+// } {
+//   console.log(`hello there ${user.name.toLowerCase()}!!`);
+//   return user;
+// }
+// function createUser(user: User):User {
+//   console.log(`hello there ${user.name.toLowerCase()}!!`);
+//   return user;
+// }
+// let users=createUser({id:1,name:'tah',isActive:true})
+// console.log(users);
+// ######### both of them use in it 
+// type StringNumber=string | number;
+// let value:StringOrNumber;
+// value:'hello';
+// value:123;
+
+// type Theme = "light" | "dark";
+// let theme: Theme = "dark";
+// theme = "light";
+// function setTheme(t: Theme) {
+//   theme = t;
+// }
+// setTheme("dark");
+// // #########
+
 
 
 
