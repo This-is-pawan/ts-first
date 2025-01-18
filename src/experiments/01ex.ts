@@ -217,6 +217,54 @@ console.log( Discount);
 // setTheme("dark");
 // // #########
 
+// @@@@@@@
+// const propName='age';
+// type Animal={[propName]:number;};
+// let tiger:Animal={[propName]:5}
+
+// console.log(tiger);
+// ########### interface -fundametals
+// allow to setup shape for objects (only object)
+
+interface Book {
+readonly isbn:number;
+title:string;
+author:string;
+genure?:string;
+// method
+printAuthor():void;
+
+}
+const deepwork:Book={
+  isbn:123,
+  title:'deep work',
+  author:'cal newport',
+  genure:'self-help',
+  printAuthor(){
+    console.log(this.author)
+  
+  }
+};
+// deepwork.isbn='some value'
+deepwork.printAuthor()
+console.log(deepwork.isbn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
