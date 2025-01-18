@@ -383,6 +383,34 @@ let bed=birdObject as Bird //type insertion
 console.log(bed);
 console.log(bed.name);
 
+// #######
+function runSomeCode() {
+  const radom=Math.random();
+  if (radom<0.5) {
+    throw new Error("there was error.....");
+    
+  } else {
+    throw new Error("some er");
+    
+  }
+}
+try {
+  runSomeCode()
+  
+  
+} catch (error) {
+  // console.log(error);
+  if (error instanceof Error) {
+    console.log(error.message);
+    
+  }else{
+    console.log(error);
+    
+  }
+}
+
+
+
 
 
 
