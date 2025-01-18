@@ -301,6 +301,28 @@ return someValue
 
 // const result=deepwork.printTitle('with ts code')
 // console.log(result)
+############# EMUM
+enum ServerResponseStatus{
+  Succees,
+  Error,
+
+}
+console.log(ServerResponseStatus);
+
+interface ServerResponse{
+  result:ServerResponseStatus;
+  dat:string[];
+
+}
+
+function getServerResponse():ServerResponse{
+  return {
+    result:ServerResponseStatus.Succees,
+    date:['first item','second item'],
+  };
+}
+const response:ServerResponse=getServerResponse();
+console.log(response);
 
 
 
