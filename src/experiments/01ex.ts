@@ -226,6 +226,29 @@ console.log( Discount);
 // ########### interface -fundametals
 // allow to setup shape for objects (only object)
 
+// interface Book {
+// readonly isbn:number;
+// title:string;
+// author:string;
+// genure?:string;
+// // method
+// printAuthor():void;
+
+// }
+// const deepwork:Book={
+//   isbn:123,
+//   title:'deep work',
+//   author:'cal newport',
+//   genure:'self-help',
+//   printAuthor(){
+//     console.log(this.author)
+  
+//   }
+// };
+// // deepwork.isbn='some value'
+// deepwork.printAuthor()
+// console.log(deepwork.isbn);
+
 interface Book {
 readonly isbn:number;
 title:string;
@@ -233,21 +256,52 @@ author:string;
 genure?:string;
 // method
 printAuthor():void;
-
+printTitle(message:string):string;
+printSomething:(someValue:number)=>number;
 }
 const deepwork:Book={
   isbn:123,
   title:'deep work',
   author:'cal newport',
   genure:'self-help',
-  printAuthor(){
-    console.log(this.author)
+  // printAuthor(){
+  //   console.log(this.author)
   
-  }
+  // },
+  printTitle(message){
+    return `${this.title} ${message}`
+  },
+  // first
+  // printSomething:function(someValue){
+  //   return someValue
+  // }
+  // second option
+  // printSomething:(someValue)=>{
+    // console.log(this);
+  //   console.log(deepwork.author);
+    
+  //   return someValue
+  // }
+  //third option
+printSomething(someValue){
+return someValue
+}
+// printAuthor:()=>{
+// console.log(deepwork.author);
+
+// }
+
 };
+// console.log(deepwork.printSomething(34));
+
+
 // deepwork.isbn='some value'
-deepwork.printAuthor()
-console.log(deepwork.isbn);
+// deepwork.printAuthor('dklsjf')nothing return
+// console.log(deepwork.isbn);
+
+// const result=deepwork.printTitle('with ts code')
+// console.log(result)
+
 
 
 
