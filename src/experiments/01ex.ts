@@ -408,6 +408,44 @@ try {
     
   }
 }
+  //  %%%%%%$%#%$#445645#3333333%%$%$$$
+// import newStudent,{sayHello ,person,type Student}  from "./02ex";
+
+//  ###### NOTE IF JS FILE IN EXPORT IN TS THEN USE ALLLOWJS in tsconfig.json ########## 
+// sayHello('typescript')
+// console.log(newStudent);
+
+// console.log(person);
+// // above and this both using in it with export  
+// const anotherStudent:Student={
+//   name:'bob',
+//   age:23,
+// }
+// console.log(anotherStudent);
+// first
+type ValueType=string|number|boolean;
+let value:ValueType;
+const radom=Math.random();
+value=radom < 0.33 ? 'Hello': radom <0.66 ? 123.456 : true;
+function checkTheme(value:ValueType):void{
+if (typeof value ==='string') {
+  console.log(value.toLowerCase());
+  return;
+}
+if (typeof value ==='number') {
+  console.log(value.toFixed());
+  return;
+}
+console.log(`boolean : ${value}`);
+}
+checkTheme(value)
+// second
+
+
+
+
+
+
 
 
 
