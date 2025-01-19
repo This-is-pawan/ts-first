@@ -617,6 +617,166 @@ const  result=Sum();
 console.log(result);
 
 
+// ############################
+/ createArray<string>(3,'hello'); result ['hello','hello','hello']  T is replaced with string, so the function returns
+// createArray<number>(4,100); result [100,100,100,100]
+// function genrateStringArray(length:number,value:string):string[]{
+//   let result:string[]=[]
+//   result=Array(length).fill(value);
+//   return result
+// }
+// console.log(genrateStringArray(6,'hello'));
+// function createArray<T>(length:number,value:T):Array<T>{
+//   let result:string[]=[]
+//   result=Array(length).fill(value);
+//   return result
+// }
+// let arraySrings=createArray<string>(10,'hello sir')
+// let arrayNumber=createArray<number>(10,45)
+// console.log(arraySrings);
+// console.log(arrayNumber);
+// 
+// function pair<T, U>(param1: T, param2: U): [T, U] {
+//   return [param1, param2];
+// }
+
+// let results = pair<number, string>(123, 'hello');
+// console.log(results);
+// function processValue<T extends string |number>(value:T):T{
+//   console.log(value);
+//   return value;
+// }
+// processValue('hello')
+// processValue(12)
+// processValue(true)
+// interface StoreData<T>{
+//   data:T[];
+// }
+// const storeNumbers:StoreData<number>={
+//   data:[1,2,3,4],
+// }
+// const randomStuff:StoreData<any>={
+//   data:['random',1],
+// }
+// **OR**
+// interface StoreData<T=any>{
+//   data:T[];
+// }
+// const storeNumbers:StoreData<number>={
+//   data:[1,2,3,4],
+// }
+// const randomStuff:StoreData={
+//   data:['random',1],
+// }
+// data is located in the data property
+// const url='https://www.course-api.com/react-tours-project';
+// console.log(url);
+
+// const { data } = axios.get(someUrl);
+// axios.get<{ name: string }[]>(someUrl);
+
+// export class Axios {
+//   get<T = any, R = AxiosResponse<T>, D = any>(
+//     url: string,
+//     config?: AxiosRequestConfig<D>
+//   ): Promise<R>;
+// }
+
+// export interface AxiosResponse<T = any, D = any> {
+//   data: T;
+//   status: number;
+//   statusText: string;
+//   headers: RawAxiosResponseHeaders | AxiosResponseHeaders;
+//   config: InternalAxiosRequestConfig<D>;
+//   request?: any;
+// }
+// const url='https://www.course-api.com/react-tours-project';
+// // console.log(url);
+// import {z} from 'zod'
+// // console.log(z);using of some methods Zod
+// const tourSchema=z.object({
+//   id:z.string(),
+//   name:z.string(),
+//   info:z.string(),
+//   image:z.string(),
+//   something:z.string(),
+// })
+// type Tour=z.infer<typeof tourSchema>
+// type Tour={
+//   id:string;
+//   name:string;
+//   info:string;
+//   image:string;
+//   something:string;
+// } above same like
+// async function fetchData(url:string):Promise<Tour[]>{
+// try {
+//   const response=await fetch(url);
+//   if (!response.ok) {
+//     throw new Error (`https error !status:${response.status}`)
+//   }
+//   // const data=await response.json()
+//   const rawData:Tour[]=await response.json()
+//   // console.log(data);
+const url='https://www.course-api.com/react-tours-project';
+// console.log(url);
+import {z} from 'zod'
+// console.log(z);using of some methods Zod
+const tourSchema=z.object({
+  id:z.string(),
+  name:z.string(),
+  info:z.string(),
+  image:z.string(),
+  // something:z.string(), if use this it get an error
+})
+type Tour=z.infer<typeof tourSchema>
+//   const result=tourSchema.array().safeParse(rawData)
+//   console.log(result);
+  
+//   if (!result.success) {
+//     throw new Error(`Invalid data: ${result.error}`);
+    
+//   }
+//   return result.data
+
+// } catch (error) {
+//   const erroMsg=error instanceof Error?error.message:'there was an error ...'
+//   console.log(erroMsg);
+//   return []
+// }
+// } 
+// let  tours= await fetchData(url)
+// tours.map((tour:any)=>{
+// console.log(tour.name);
+
+// })
+async function fetchData(url: string): Promise<Tour[]> {
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const rawData: Tour[] = await response.json();
+    const result = tourSchema.array().safeParse(rawData);
+console.log(result);
+
+    if (!result.success) {
+      throw new Error(`Invalid data: ${result.error}`);
+    }
+
+    return result.data; 
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : "An unknown error occurred.");
+    return [];
+  }
+}
+
+const tours = await fetchData(url);
+tours.map((tour:any) => {
+  console.log(tour);
+});
 
 
 
