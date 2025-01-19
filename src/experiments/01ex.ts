@@ -777,6 +777,159 @@ const tours = await fetchData(url);
 tours.map((tour:any) => {
   console.log(tour);
 });
+// import bcrypt from "bcryptjs";
+// import { Random } from "./02ex";
+
+import { boolean } from "zod";
+
+
+// const saltRounds = 10;
+// const password = "my_secure_password";
+
+// // Generate a salt
+// const salt = bcrypt.genSaltSync(saltRounds);
+
+// // Hash the password
+// const hashedPassword = bcrypt.hashSync(password, salt);
+
+// console.log("Hashed Password:", hashedPassword);
+// class Book {
+//  public readonly title: string;
+//  public  author: string;
+//  private  checked:boolean;
+//   constructor(title: string, author: string ) {
+//     this.title = title;
+//     this.author = author;
+    // this.checked=false;  here is default property
+//   }
+// }
+
+// const deepWork = new Book('Deep Work', 'Cal Newport');
+// console.log(deepWork.checked);
+
+
+
+// class Car {
+//   readonly make: string;
+
+//   constructor(make: string) {
+//       this.make = make;
+//   }
+// }
+
+// const myCar = new Car("Toyota");
+// myCar.make = "Honda"; // Error: Cannot assign to 'make' because it is a read-only property it is not allowed to set after initial value in it ,it is safty feature 
+// #### public feature
+// class Car {
+//   public make: string; // Explicitly public (default if no modifier is specified)
+
+//   constructor(make: string) {
+//       this.make = make;
+//   }
+// }
+
+// const myCar = new Car("Toyota");
+// console.log(myCar.make); // Accessible: "Toyota"
+// myCar.make = "Honda"; // Modifiable: No restrictions
+
+// ###### private feature
+// class Car {
+//   private make: string;
+
+//   constructor(make: string) {
+//       this.make = make;
+//   }
+
+//   public getMake(): string {
+//       return this.make; // Accessible within the class
+//   }
+// }
+
+// const myCar = new Car("Toyota");
+// // console.log(myCar.make); // Error: Property 'make' is private
+// console.log(myCar.getMake()); // Accessible via public method: "Toyota"
+
+
+
+// class Book{
+//   public readonly title:string;
+//   public author:string;
+//   private checkOut:boolean=false
+//   constructor(title:string,author:string){
+// this.title=title;
+// this.author=author;
+
+//   }
+//   public checkout(){
+//     this.checkOut=true;
+//   }
+//   public isCheckOut(){
+//     return this.checkOut=this.toogleCheckedOutStatus()
+//   }
+//   private toogleCheckedOutStatus(){
+//     return !this.checkOut
+//   }
+// }
+// const deepWork =new Book ('deep work ','cal new port');
+// deepWork.checkout();
+// // console.log(deepWork);
+// console.log(deepWork.isCheckOut());
+// // console.log(deepWork.title);
+
+// class Book {
+//   private checkOuts: boolean = false;
+//   constructor(
+//     public readonly title: string, 
+//     public author: string,        
+//     private someValue: number     
+//   ) {}
+
+//   // Method to get the value of someValue
+//   public getSomeValue(): number {
+//     return this.someValue;
+//   }
+// }
+
+// const deepWork = new Book("Deep Work", "Cal Newport", 45);
+// const a = deepWork.getSomeValue();
+
+// console.log(a);
+
+
+
+
+
+class Book {
+  private checkedOut: boolean = false;
+
+  constructor(readonly title: string, public author: string) {}
+
+  get info() {
+    return `${this.title} by ${this.author}`;
+  }
+
+ set checkOut(value: boolean) {
+    this.checkedOut = value;
+  }
+}
+
+const deepWork = new Book("Deep Work", "Cal Newport");
+console.log(deepWork.info); // Output: Deep Work by Cal Newport
+// deepWork.checkOut = true;
+console.log(deepWork);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
