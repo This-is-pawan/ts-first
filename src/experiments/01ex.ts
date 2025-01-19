@@ -440,6 +440,110 @@ console.log(`boolean : ${value}`);
 }
 checkTheme(value)
 // second
+// type Dog ={type:'dog';name:string;bark:()=>void}
+// type Cat ={type:'dog';name:string;meow:()=>void}
+// type Animal = Dog|Cat
+// function makeSound(animal:Animal){
+//   if (animal.type ==='dog') {
+//     animal.bark()
+//   } else {
+//     animal.meow()
+//   }
+// }
+
+// function makeSound(animal:Animal){
+//   if('bark' in animal){
+//     animal.bark()
+//   }
+//   else{
+//     animal.meow()
+//   }
+// }
+// function printLength(str:string|null|undefined){
+//   if(str){
+//     console.log(str.length);
+    
+//   }else{
+//     console.log('no string provided');
+    
+//   }
+
+// }
+// printLength('hello');
+// printLength('');
+// printLength(null);
+// printLength();
+// printLength(undefined);
+
+
+// third
+// try {
+//   throw "This is an error";
+//   // throw new Error("This is an error");
+  
+// } catch (error) {
+//   if(error instanceof Error){
+//     console.log(`caught an Error object:${
+//       error.message}`);
+    
+//   }else{
+//     console.log('unknown error...');
+    
+//   }
+// }
+// function checkInput(input:Date|string):string{
+//   if(input instanceof Date){
+// return input.getFullYear().toString()
+//   }
+//   return input
+// }
+// const year=checkInput(new Date())
+// const random=checkInput('2025-01-19')
+// console.log(year);
+// console.log(random);
+
+type Student={
+  name:string;
+  study:()=>void;
+}
+type User={
+  name:string;
+  login:()=>void;
+}
+type Person =Student | User;
+const randomPerson=():Person =>{
+  return Math.random()>0.5
+  ?{name:'john',study:()=>console.log('studing')
+  }:{name:'mary',login:()=>console.log('logging in')
+}
+}
+// const person=randomPerson(); 
+// OR
+const person:Person={
+  name:'anna',
+  study:()=>console.log('study....'),
+};
+
+console.log(person);
+
+function isStudent (person:Person):person is Student{
+  // return 'study' in person
+  return(person as Student).study !==undefined
+}
+if (isStudent(person)) {
+  person.study();
+}
+else{
+  person.login()
+}
+// end
+
+
+
+
+
+
+
 
 
 
