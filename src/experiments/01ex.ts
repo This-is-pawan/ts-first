@@ -538,6 +538,85 @@ else{
 }
 // end
 
+// type IncrementAction = {
+//   type: 'increment';
+//   amount: number;
+//   timestamp: number;
+//   user: string;
+// };
+
+// type DecrementAction = {
+//   type: 'decrement';
+//   amount: number;
+//   timestamp: number;
+//   user: string;
+// };
+
+// type Action = IncrementAction | DecrementAction;
+
+// function reducer(state: number, action: Action): number {
+//   switch (action.type) {
+//     case 'increment':
+//       return state + action.amount;
+//     case 'decrement':
+//       return state - action.amount;
+//     default:
+//       const unexpectedAction: never = action;
+//       throw new Error(`Unexpected action: ${unexpectedAction}`);
+//   }
+// }
+
+// const newState = reducer(15, {
+//   type: 'increment',
+//   amount: 5,
+//   timestamp: 123456,
+//   user: "john",
+// });
+// console.log(newState);
+// let array1:string[]=['Apple','Banana','Mango'];
+// ####
+// let array2:number[]=[1,2,3];
+// let array3:boolean[]=[true,false,true];
+// OR
+// let array1:Array<string>=['Apple','Banana','Mango'];
+// console.log(array1);
+// ####
+// function createString(arg:string):string{
+//   return arg;
+// }
+// function createNumber(arg:number):number{
+//   return arg;
+// }
+function genricFunction <T> (arg:T):T{
+  return arg;
+}
+
+const someStringValue=genricFunction<string>('hello world');
+const someNumberValue=genricFunction<number>(2345);
+console.log(`String:${someStringValue} and Number:${someNumberValue}`);
+interface GeneratorInterface<T>{
+  value:T;
+  getValue:()=>T;
+}
+const genricString:GeneratorInterface<string>={
+  value:'hello world',
+  getValue(){
+    return this.value;
+  }
+}
+console.log(genricString);
+// async function Sum():string {//The return type of an async function or method must be the global Promise<T> type. Did you mean to write 'Promise<string>
+//   return 'hello sir'
+// }
+// const  result=Sum();
+// console.log(result);
+async function Sum():Promise <string> {
+  return 'hello sir'
+}
+const  result=Sum();
+console.log(result);
+
+
 
 
 
