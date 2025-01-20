@@ -918,6 +918,42 @@ console.log(deepWork.info); // Output: Deep Work by Cal Newport
 // deepWork.checkOut = true;
 console.log(deepWork);
 
+// optional 
+import React, { useState } from 'react';
+
+function Component() {
+  const [email, setEmail] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    console.log('Email:', formData.get('email'));
+  };
+
+  return (
+    <section>
+      <h2>Event Example</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  );
+}
+
+export default Component;
 
 
 
