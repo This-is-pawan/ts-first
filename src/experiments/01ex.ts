@@ -957,6 +957,41 @@ export default Component;
 
 
 
+// type x = {
+//   name: string;
+//   age: number;
+// };
+
+// type y = x & {
+//   company: string;
+//   employee: number;
+// };
+
+// let Y: y = {
+//   name: 'ram',
+//   age: 21,
+//   company: 'eror',
+//   employee: 12,
+// };
+// console.log(Y);
+// OR
+
+interface Person {
+  name: string;
+}
+
+interface Guy extends Person {
+  name: 'oe'; // Overrides the name property with a specific string literal type
+}
+
+// Create an instance of Guy
+const guy: Guy = {
+  name: 'oe', // This must match the string literal type defined in Guy
+};
+
+// Log the object to the console
+console.log(guy);
+
 
 
 
