@@ -993,7 +993,7 @@ console.log(guy);
 
 
 
-
+// use in react components (optional)
 
 
 
