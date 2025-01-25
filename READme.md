@@ -8,3 +8,6 @@ This guide explains how to create a new Vite project using the `vanilla-ts` temp
 npm create vite@latest typescript -- --template vanilla-ts 
 
 ```bash npm run dev
+
+
+
