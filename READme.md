@@ -11,3 +11,4 @@ npm create vite@latest typescript -- --template vanilla-ts
 
 
 
+you also try other option 
